@@ -116,13 +116,18 @@ $(function () {
         let newFeedText;
         beforeEach(function (done) {
             loadFeed(0, function () {
+                // feed 0 done loading
                 oldFeedText = $('.feed').text(); // Text content of old feed
-                loadFeed(1, done);
+                loadFeed(1, function () {
+                    // feed 1 done loading
+                    newFeedText = $('.feed').text(); // Text content of new feed
+                    // all variables initialized, can begin tests
+                    done();
+                });
             });
         });
 
         it('Verify if the content of new feed loaded is same as that of old feed', function () {
-            newFeedText = $('.feed').text(); // Text content of new feed
             expect(oldFeedText).toBeDefined();
             expect(newFeedText).toBeDefined();
             // Verifying whether content is different or not
