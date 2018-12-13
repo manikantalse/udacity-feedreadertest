@@ -4,6 +4,7 @@
 ## Steps to run the application
 
 1. Download or clone github [repo](https://github.com/manikantalse/udacity-feedreadertest).
+    `git clone https://github.com/manikantalse/udacity-feedreadertest`
 
 2. Go to the root path of the project and open `index.html` file in a browser.
 
